@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Personal account</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/postrequest.js"></script>
+    <script src="/login.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h3 style="color:blue">Currency Conversation</h3>
+
+    <div>
+        <form class="form-inline" style="margin:20px 20px 20px 20px" id="customerForm">
+            <div class="selectors">
+                <div class = "form-inline">
+                    <select class = "form-control" style="width: 300px" id = "currency1">
+                        <option style="width: 300px"></option>
+                    </select>
+                    <label for="currency2" style="margin-right:5px"><===></label>
+                    <select class = "form-control" style="width: 300px" id = "currency2">
+                        <option style="width: 300px"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-inline">
+                <input type="text" style="width: 300px" class="form-control input-number" id="amount" placeholder="Enter amount (numbers only)" required/>
+                <label for="result" style="margin-right:5px"><===></label>
+                <input type="text" style="width: 300px" class="form-control" id="result" disabled>
+            </div>
+            <button id="convert" type="submit" class="btn btn-primary">CONVERT</button>
+        </form>
+    </div>
+</div>
+<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $('body').on('input', '.input-number', function(){
+        this.value = this.value.replace(/[^0-9\.]/g, '');
+    });
+</script>
+</body>
+</html>
