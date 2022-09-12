@@ -1,0 +1,3 @@
+com\web\personalaccountwithcurrency\PersonalAccountWithCurrencyApplication.class
+com\web\personalaccountwithcurrency\config\WebConfig.class
+com\web\personalaccountwithcurrency\controller\IndexController.class
