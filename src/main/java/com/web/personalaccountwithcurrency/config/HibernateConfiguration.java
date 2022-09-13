@@ -25,7 +25,7 @@ public class HibernateConfiguration {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
         sessionFactory.setPackagesToScan(
-                "com.api.personalamountaccount.repository");
+                "com.web.personalaccountwithcurrency.repository");
         sessionFactory.setHibernateProperties(hibernateProperties());
 
         return sessionFactory;
