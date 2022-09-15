@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	fillCurrentUserData();
 	initData();
-	setTimeout(fillCurrentUserData, 21000);
+	setInterval(fillCurrentUserData, 15000);
 
     $("#customerForm").submit(function(event) {
 		event.preventDefault();
