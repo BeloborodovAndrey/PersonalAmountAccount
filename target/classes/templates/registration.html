@@ -1,32 +1,40 @@
 <!DOCTYPE html>
-<html xmlns:form="http://www.w3.org/1999/xhtml">
+<html>
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <title>Регистрация</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>REGISTRATION</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/registration.js"></script>
 </head>
 
 <body>
-<div>
-    <form:form method="POST" modelAttribute="userForm">
-        <h2>Registration</h2>
-        <div>
-            <form:input type="text" path="username" placeholder="Username"
-                        autofocus="true"></form:input>
-            <form:errors path="username"></form:errors>
-            ${usernameError}
+<form role="form" method="post" class="col-2 mx-auto mb-7" style="bottom: -30px" id="registerForm">
+    <h3>Register new user</h3>
+    <div class="row">
+        <div class="form-group text-center">
+            <div class="control-group required">
+                <div class="controls" style="margin-bottom: 1px">
+                    <input class="form-control" placeholder="login" id="login" maxlength="40" name="login" type="text" />
+                </div>
+                <div class="controls" style="margin-bottom: 5px">
+                    <input class="form-control" placeholder="Password" id="password" maxlength="40" name="password" type="password" />
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                <h4><a href="/login">Return to login page</a></h4>
+            </div>
         </div>
-        <div>
-            <form:input type="password" path="password" placeholder="Password"></form:input>
-        </div>
-        <div>
-            <form:input type="password" path="passwordConfirm"
-                        placeholder="Confirm your password"></form:input>
-            <form:errors path="password"></form:errors>
-            ${passwordError}
-        </div>
-        <button type="submit">register</button>
-    </form:form>
-    <a href="/">Home</a>
-</div>
+    </div>
+</form>
 </body>
 </html>

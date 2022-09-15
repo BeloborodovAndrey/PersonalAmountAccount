@@ -10,16 +10,16 @@ $(document).ready(function() {
 
     function getData(login, password){
 		$.ajax({
-				type : "post",
+				type : "POST",
 				async: false,
 				contentType : "application/json",
-				url : window.location.href + "/signIn?login=" + login + "?password=" + password,
+				url : window.location.origin + "/signIn?login=" + login + "&password=" + password,
 				dataType: 'json',
 				success: function(json) {
-					if(json === true) {
-						window.location.href = window.location.href + "/home";
+					if(json.token != null) {
+						window.location.href = window.location.origin + "/home?token=" + json.token;
 					} else {
-						alert('this user is not registered');
+						alert('this user is not registered or has wrong password');
 					}
 				},
 				error : function(e) {

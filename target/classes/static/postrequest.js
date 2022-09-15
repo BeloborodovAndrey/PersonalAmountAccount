@@ -1,5 +1,6 @@
-$( document ).ready(function() {
+$(document).ready(function() {
 	initData();
+	fillCurrentAmount()
 
     $("#customerForm").submit(function(event) {
 		event.preventDefault();
@@ -114,6 +115,27 @@ $( document ).ready(function() {
 							console.log("ERROR: ", e);
 						}
 					});
+				}
+			}
+		)
+	}
+
+	function fillCurrentAmount(){
+		$.ajax({
+				type : "GET",
+				contentType : "application/json",
+				url: window.location.origin + '/currentAmount',
+				dataType: 'json',
+				success: function(result) {
+					if (result != null) {
+						$("#currentAmount").val(result);
+					} else {
+						$("#currentAmount").val(0);
+					}
+				},
+				error : function(e) {
+					console.log('cant find data', e);
+					alert("Can't receive amount data from server")
 				}
 			}
 		)

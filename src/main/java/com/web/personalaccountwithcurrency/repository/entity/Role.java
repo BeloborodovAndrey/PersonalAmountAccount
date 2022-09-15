@@ -9,16 +9,17 @@ import java.util.Set;
 @Table(name = "t_role")
 public class Role implements GrantedAuthority {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     @Transient
-    @ManyToMany(mappedBy = "roles")
+    @ManyToMany(mappedBy = "roles", cascade = CascadeType.ALL)
     private Set<User> users;
     public Role() {
     }
 
-    public Role(Long id) {
-        this.id = id;
+    public Role(String name) {
+        this.name = name;
     }
 
     public Role(Long id, String name) {
