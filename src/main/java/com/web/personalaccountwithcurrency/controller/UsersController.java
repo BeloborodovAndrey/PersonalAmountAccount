@@ -31,7 +31,7 @@ public class UsersController {
         if (userService.isAuthorizedUser(token)) {
             return "true";
         }
-        return "true";
+        return "false";
     }
 
     @GetMapping("/homePage")

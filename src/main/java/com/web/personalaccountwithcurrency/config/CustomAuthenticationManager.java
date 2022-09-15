@@ -38,7 +38,12 @@ public class CustomAuthenticationManager implements AuthenticationManager {
         }
         User dbUser = (User) user;
         Set<Role> userRights = dbUser.getRoles();
-        SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(username, null, userRights.stream().map(x -> new SimpleGrantedAuthority(x.getName())).collect(Collectors.toList())));
+        SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(
+                username,
+                null,
+                userRights.stream()
+                        .map(x -> new SimpleGrantedAuthority(x.getName()))
+                        .collect(Collectors.toList())));
         return SecurityContextHolder.getContext().getAuthentication();
     }
 

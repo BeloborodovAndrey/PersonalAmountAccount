@@ -41,13 +41,18 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
+        try {
+            User user = userRepository.findByUsername(username);
 
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found");
+            if (user == null) {
+                throw new UsernameNotFoundException("User not found");
+            }
+
+            return user;
+        } catch (UsernameNotFoundException ex) {
+            log.debug("Can't find user");
+            return new User();
         }
-
-        return user;
     }
 
     public User loadUserByUsernameAndPassword(String login, String password) throws UsernameNotFoundException {

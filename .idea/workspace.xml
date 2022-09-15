@@ -99,6 +99,7 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.web.personalaccountwithcurrency.service" />
       <recent name="com.web.personalaccountwithcurrency.controller" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -112,8 +113,9 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn --builder" />
-      <command value="mvn clean install" />
       <command value="mvn clean" />
+      <command value="mvn clean install" />
+      <command value="mvn spring-boot:build-image" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -123,23 +125,69 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ConvertControllerTest">
-    <configuration name="ConvertControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserServiceTest">
+    <configuration name="RatesServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PersonalAccountWithCurrency" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.web.personalaccountwithcurrency.controller.*" />
+          <option name="PATTERN" value="com.web.personalaccountwithcurrency.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.web.personalaccountwithcurrency.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.web.personalaccountwithcurrency.controller.ConvertControllerTest" />
+      <option name="PACKAGE_NAME" value="com.web.personalaccountwithcurrency.service" />
+      <option name="MAIN_CLASS_NAME" value="com.web.personalaccountwithcurrency.service.RatesServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConvertControllerTest.convert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SchedulerServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PersonalAccountWithCurrency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.web.personalaccountwithcurrency.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.web.personalaccountwithcurrency.service" />
+      <option name="MAIN_CLASS_NAME" value="com.web.personalaccountwithcurrency.service.SchedulerServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulerServiceTest.updateRates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PersonalAccountWithCurrency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.web.personalaccountwithcurrency.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.web.personalaccountwithcurrency.service" />
+      <option name="MAIN_CLASS_NAME" value="com.web.personalaccountwithcurrency.service.SchedulerServiceTest" />
+      <option name="METHOD_NAME" value="updateRates" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PersonalAccountWithCurrency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.web.personalaccountwithcurrency.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.web.personalaccountwithcurrency.service" />
+      <option name="MAIN_CLASS_NAME" value="com.web.personalaccountwithcurrency.service.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersControllerTest.getUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PersonalAccountWithCurrency" />
       <extension name="coverage">
         <pattern>
@@ -148,15 +196,12 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.web.personalaccountwithcurrency.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.web.personalaccountwithcurrency.controller.ConvertControllerTest" />
-      <option name="METHOD_NAME" value="convert" />
+      <option name="MAIN_CLASS_NAME" value="com.web.personalaccountwithcurrency.controller.UsersControllerTest" />
+      <option name="METHOD_NAME" value="getUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="postrequest.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/main/resources/static/postrequest.js" working-dir="$PROJECT_DIR$/src/main/resources/static/js">
-      <method v="2" />
     </configuration>
     <configuration name="PersonalAccountWithCurrencyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" />
@@ -167,18 +212,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ConvertControllerTest" />
-      <item itemvalue="JUnit.ConvertControllerTest.convert" />
-      <item itemvalue="Node.js.postrequest.js" />
+      <item itemvalue="JUnit.RatesServiceImplTest" />
+      <item itemvalue="JUnit.SchedulerServiceTest" />
+      <item itemvalue="JUnit.SchedulerServiceTest.updateRates" />
+      <item itemvalue="JUnit.UserServiceTest" />
+      <item itemvalue="JUnit.UsersControllerTest.getUser" />
       <item itemvalue="Spring Boot.PersonalAccountWithCurrencyApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ConvertControllerTest" />
-        <item itemvalue="JUnit.ConvertControllerTest.convert" />
-        <item itemvalue="Node.js.postrequest.js" />
-        <item itemvalue="Node.js.postrequest.js" />
-        <item itemvalue="Node.js.postrequest.js" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.SchedulerServiceTest.updateRates" />
+        <item itemvalue="JUnit.SchedulerServiceTest" />
+        <item itemvalue="JUnit.RatesServiceImplTest" />
+        <item itemvalue="JUnit.UsersControllerTest.getUser" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663267157333</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add test and jar file">
+      <created>1663268288482</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1663268288482</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +345,8 @@
     <MESSAGE value="Add scheduling, conversation and logout" />
     <MESSAGE value="set interval for js func" />
     <MESSAGE value="add javadoc comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="add javadoc comments" />
+    <MESSAGE value="add test and jar file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test and jar file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -328,8 +383,38 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/web/personalaccountwithcurrency/controller/ConvertControllerTest.java</url>
-          <line>37</line>
+          <line>36</line>
           <option name="timeStamp" value="232" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/UserService.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="234" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/RatesServiceImpl.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="235" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/web/personalaccountwithcurrency/service/SchedulerServiceTest.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="238" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/SchedulerService.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="241" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/SchedulerService.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="242" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/web/personalaccountwithcurrency/service/SchedulerServiceTest.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="243" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
