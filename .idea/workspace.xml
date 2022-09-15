@@ -208,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663265841173</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="set interval for js func">
+      <created>1663266351944</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1663266351944</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,11 +274,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/controller/UsersController.java</url>
           <line>30</line>
           <option name="timeStamp" value="184" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/SchedulerService.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="230" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

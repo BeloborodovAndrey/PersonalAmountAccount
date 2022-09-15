@@ -11,6 +11,9 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
+/**
+ * Custom Jwt provider
+ */
 @Component
 @Slf4j
 public class JwtProvider {

@@ -67,10 +67,6 @@ public class UserService implements UserDetailsService {
         }
     }
 
-    public boolean checkPassword(String password, String encodedPassword) {
-        return bCryptPasswordEncoder.matches(password, encodedPassword);
-    }
-
     public boolean saveUser(String login, String password) {
         User userFromDB = userRepository.findByUsername(login);
         if (userFromDB == null) {
@@ -129,4 +125,9 @@ public class UserService implements UserDetailsService {
             SecurityContextHolder.getContext().setAuthentication(null);
         }
     }
+
+    private boolean checkPassword(String password, String encodedPassword) {
+        return bCryptPasswordEncoder.matches(password, encodedPassword);
+    }
+
 }

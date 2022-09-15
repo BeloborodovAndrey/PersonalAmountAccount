@@ -21,6 +21,9 @@ import java.io.IOException;
 import static org.springframework.util.StringUtils.hasText;
 
 
+/**
+ * Token auth filter
+ */
 @Slf4j
 public class TokenAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
 

@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * @author Андрей
+ * controller for register and logout actions
+ */
 @Controller
 public class RegistrationController {
 
@@ -32,7 +36,7 @@ public class RegistrationController {
     }
 
     @GetMapping("/userLogout")
-    public String logout() {
+    public String userLogout() {
         userService.logout();
         return "index";
     }
