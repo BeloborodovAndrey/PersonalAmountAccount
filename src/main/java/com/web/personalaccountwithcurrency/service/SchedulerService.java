@@ -2,6 +2,7 @@ package com.web.personalaccountwithcurrency.service;
 
 import com.web.personalaccountwithcurrency.repository.RatesRepository;
 import com.web.personalaccountwithcurrency.repository.entity.Rates;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Isolation;
@@ -17,6 +18,7 @@ import java.util.Random;
  * service for currency rates updating
  */
 @Component
+@Slf4j
 public class SchedulerService {
 
     private final RatesRepository ratesRepository;
@@ -43,10 +45,17 @@ public class SchedulerService {
     }
 
     private BigDecimal transformAmount(BigDecimal curAmount) {
-        BigDecimal prcValue = curAmount
-                .divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP)
-                .multiply(BigDecimal.valueOf(0.5));
-        int newValue = new Random().nextInt(prcValue.negate().intValue(), prcValue.intValue());
-        return BigDecimal.valueOf(newValue).add(curAmount);
+        try {
+            BigDecimal prcValue = curAmount
+                    .divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP)
+                    .multiply(BigDecimal.valueOf(0.5));
+            int lowRange = prcValue.multiply(BigDecimal.valueOf(100)).negate().intValue();
+            int highRange = prcValue.multiply(BigDecimal.valueOf(100)).intValue();
+            BigDecimal newValue = BigDecimal.valueOf(new Random().nextInt(lowRange, highRange)).divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP);
+            return newValue.add(curAmount);
+        } catch (Exception ex) {
+            log.warn(ex.getMessage());
+            return curAmount;
+        }
     }
 }
