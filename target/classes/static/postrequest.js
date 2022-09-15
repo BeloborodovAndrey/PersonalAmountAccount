@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	fillCurrentUserData();
 	initData();
-	setTimeout(fillCurrentUserData, 21000);
+	setInterval(initData, 15000);
 
     $("#customerForm").submit(function(event) {
 		event.preventDefault();
@@ -70,6 +70,7 @@ $(document).ready(function() {
 			dataType: 'json',
 			success: function (result) {
 				var select1 = document.getElementById("currency1");
+				select1.options.length = 0;
 				fillDefaultCurrency(select1, result);
 			},
 			error: function (e) {
@@ -105,6 +106,5 @@ $(document).ready(function() {
 			option.text = key + ' (' + value + ')';
 			select.appendChild(option);
 		}
-		select.removeChild(select[0]);
 	}
 })

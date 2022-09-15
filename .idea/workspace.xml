@@ -201,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663264546505</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="set interval for js func">
+      <created>1663265841173</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663265841173</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +232,8 @@
     <MESSAGE value="Add jwt key generate" />
     <MESSAGE value="Add some refactoring" />
     <MESSAGE value="Add scheduling, conversation and logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add scheduling, conversation and logout" />
+    <MESSAGE value="set interval for js func" />
+    <option name="LAST_COMMIT_MESSAGE" value="set interval for js func" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -262,33 +270,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/SchedulerService.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="210" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/SchedulerService.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="221" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/SchedulerService.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="222" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/SchedulerService.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="224" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/SchedulerService.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="225" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/SchedulerService.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="227" />
+          <line>32</line>
+          <option name="timeStamp" value="230" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

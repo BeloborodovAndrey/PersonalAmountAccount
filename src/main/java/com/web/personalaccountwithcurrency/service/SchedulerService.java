@@ -27,7 +27,7 @@ public class SchedulerService {
         this.ratesRepository = ratesRepository;
     }
 
-    @Scheduled(fixedRate = 20000, initialDelay = 40000)
+    @Scheduled(fixedRate = 20000, initialDelay = 25000)
     @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
     public void updateRates() {
         List<Rates> ratesList = ratesRepository.findAll();
