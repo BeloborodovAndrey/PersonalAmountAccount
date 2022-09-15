@@ -1,8 +1,8 @@
 package com.web.personalaccountwithcurrency.controller;
 
-import com.web.personalaccountwithcurrency.config.CustomAuthenticationManager;
 import com.web.personalaccountwithcurrency.repository.entity.User;
 import com.web.personalaccountwithcurrency.service.UserService;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,27 +24,23 @@ public class UsersController {
 
 
     @GetMapping("/home")
+    @ResponseBody
     public String getUser(@RequestParam("token") String token) {
-        try {
-            if (userService.isAuthorizedUser(token)) {
-                return "home";
-            }
-            return "index";
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return "index";
+        if (userService.isAuthorizedUser(token)) {
+            return "true";
         }
+        return "true";
     }
 
     @GetMapping("/homePage")
-    public String getHome() {
-        return "home";
+    public String getHomePage() {
+        return "account";
     }
 
     @ResponseBody
-    @GetMapping("/currentAmount")
-    public String getCurrentAmount() {
-        return userService.getCurrentAmount();
+    @GetMapping("/currentUser")
+    public User getCurrentUser(Authentication authentication) {
+        return userService.getCurrentUser(authentication);
     }
 
     @ResponseBody

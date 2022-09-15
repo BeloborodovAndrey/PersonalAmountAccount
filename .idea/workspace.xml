@@ -5,30 +5,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8221e8e-1488-4f0a-9d43-70f2912d3e41" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/config/CustomAuthenticationManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/config/jwt/JwtProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/config/jwt/TokenAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/controller/ErrorHandlerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/model/TokenResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/registration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_springsecurity4_3_0_4_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_bootstrap_5_2_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_3_6_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PersonalAccountWithCurrency.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalAccountWithCurrency.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/PersonalAccountWithCurrencyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/PersonalAccountWithCurrencyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/config/HibernateConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/config/HibernateConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/config/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/config/SpringSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/controller/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/repository/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/repository/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/repository/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/repository/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/loginuser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/loginuser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/postrequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/postrequest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PersonalAccountWithCurrency-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/PersonalAccountWithCurrency-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PersonalAccountWithCurrency-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/PersonalAccountWithCurrency-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/PersonalAccountWithCurrency-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/PersonalAccountWithCurrency-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/PersonalAccountWithCurrencyApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/PersonalAccountWithCurrencyApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/config/HibernateConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/config/HibernateConfiguration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/config/SpringSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/config/SpringSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/controller/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/controller/RegistrationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/controller/UsersController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/repository/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/repository/entity/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/repository/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/repository/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/web/personalaccountwithcurrency/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/postrequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/postrequest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.web.personalaccountwithcurrency.PersonalAccountWithCurrencyApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.web.personalaccountwithcurrency.PersonalAccountWithCurrencyApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.web.personalaccountwithcurrency.PersonalAccountWithCurrencyApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.web.personalaccountwithcurrency.PersonalAccountWithCurrencyApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.web.personalaccountwithcurrency.PersonalAccountWithCurrencyApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.web.personalaccountwithcurrency.PersonalAccountWithCurrencyApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/web/personalaccountwithcurrency/PersonalAccountWithCurrencyApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +211,7 @@
       <workItem from="1663060950354" duration="426000" />
       <workItem from="1663061412390" duration="43512000" />
       <workItem from="1663156834911" duration="1798000" />
+      <workItem from="1663227389895" duration="21544000" />
     </task>
     <task id="LOCAL-00001" summary="init service">
       <created>1662891084491</created>
@@ -198,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663011910151</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add jwt key generate">
+      <created>1663227912438</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663227912438</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +262,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init service" />
     <MESSAGE value="add security config and services description" />
-    <option name="LAST_COMMIT_MESSAGE" value="add security config and services description" />
+    <MESSAGE value="Add jwt key generate" />
+    <MESSAGE value="Add some refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add some refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -241,38 +286,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/controller/UsersController.java</url>
-          <line>46</line>
+          <line>42</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/UserService.java</url>
-          <line>102</line>
-          <option name="timeStamp" value="100" />
+          <url>jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.65/tomcat-embed-core-9.0.65.jar!/org/apache/catalina/core/ApplicationFilterChain.class</url>
+          <line>117</line>
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.65/tomcat-embed-core-9.0.65.jar!/org/apache/catalina/core/ApplicationFilterChain.class</url>
+          <line>119</line>
+          <option name="timeStamp" value="166" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/controller/UsersController.java</url>
           <line>28</line>
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/controller/UsersController.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="112" />
+          <option name="timeStamp" value="184" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/config/jwt/TokenAuthenticationFilter.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="124" />
+          <line>55</line>
+          <option name="timeStamp" value="207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/config/jwt/TokenAuthenticationFilter.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="133" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/config/jwt/TokenAuthenticationFilter.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="134" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/web/personalaccountwithcurrency/service/UserService.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="208" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

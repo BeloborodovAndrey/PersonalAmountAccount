@@ -80,12 +80,16 @@ public class UserService implements UserDetailsService {
     }
 
     public boolean isAuthorizedUser(String token) {
-        User userFromDB = userRepository.findByToken(token);
-        if (userFromDB == null) {
+        User user = userRepository.findByToken(token);
+        if (user == null) {
             return false;
         }
-        return userFromDB.getToken() != null && userFromDB.getRoles().stream()
-                .anyMatch(role -> role.getName().equals("ROLE_USER"));
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null) {
+            String authUser = String.valueOf(auth.getPrincipal());
+            return authUser.equals(user.getUsername());
+        }
+        return false;
     }
 
     private User buildUser(String login, String password) {
@@ -99,11 +103,8 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
-    public String getCurrentAmount() {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User authUser = (User) auth.getPrincipal();
-        String username = authUser.getUsername();
-        String amount = authUser.getAmount();
-        return amount;
+    public User getCurrentUser(Authentication authentication) {
+        String userName = String.valueOf(authentication.getPrincipal());
+        return (User) loadUserByUsername(userName);
     }
 }

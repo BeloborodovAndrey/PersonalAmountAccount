@@ -3,9 +3,11 @@ package com.web.personalaccountwithcurrency.config;
 import com.web.personalaccountwithcurrency.config.jwt.JwtProvider;
 import com.web.personalaccountwithcurrency.config.jwt.TokenAuthenticationFilter;
 import com.web.personalaccountwithcurrency.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -19,11 +21,12 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
-    private UserService userService;
+    private final UserService userService;
 
-    private JwtProvider jwtProvider;
+    private final JwtProvider jwtProvider;
 
-    private CustomAuthenticationManager authenticationManager;
+    private final CustomAuthenticationManager authenticationManager;
+
 
     public SpringSecurityConfig(@Lazy UserService userService, JwtProvider jwtProvider, CustomAuthenticationManager authenticationManager) {
         this.userService = userService;
@@ -45,14 +48,20 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity
                 .httpBasic().disable()
                 .csrf().disable()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/admin/*").hasRole("ADMIN")
-                .antMatchers("/user/*").hasRole("USER")
-                .antMatchers("/signIn", "/home").permitAll()
+                .antMatchers("/", "/home", "/account*").access("hasRole('USER')")
+                .antMatchers("/resources/**", "/homePage").permitAll()
+                .and().csrf().disable().formLogin().loginPage("/index").permitAll()
+                .usernameParameter("username").passwordParameter("password")
+                .defaultSuccessUrl("/homePage")
                 .and()
                 .addFilterAfter(new TokenAuthenticationFilter("/home", jwtProvider, userService, authenticationManager), UsernamePasswordAuthenticationFilter.class);
     }
 
+    @Autowired
+    protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userService).passwordEncoder(bCryptPasswordEncoder());
+    }
 }

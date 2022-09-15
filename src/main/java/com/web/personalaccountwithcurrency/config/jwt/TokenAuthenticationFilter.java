@@ -30,7 +30,6 @@ public class TokenAuthenticationFilter extends AbstractAuthenticationProcessingF
 
     private final CustomAuthenticationManager authenticationManager;
 
-
     public TokenAuthenticationFilter(String url, JwtProvider jwtProvider, UserService userService, CustomAuthenticationManager authenticationManager) {
         super(url);
         this.jwtProvider = jwtProvider;
@@ -54,16 +53,15 @@ public class TokenAuthenticationFilter extends AbstractAuthenticationProcessingF
             String userLogin = jwtProvider.getLoginFromToken(token);
             UserDetails userDetails = userService.loadUserByUsername(userLogin);
             UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-            SecurityContextHolder.getContext().setAuthentication(auth);
             return authenticationManager.authenticate(auth);
         }
         return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(null, null, null));
     }
 
     @Override
-    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,FilterChain chain, Authentication authentication) throws IOException, ServletException {
-        super.successfulAuthentication(request, response, chain, authentication);
-        doFilter(request, response, chain);
+    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,FilterChain chain, Authentication authentication) throws IOException {
+        response.setContentType("application/json");
+        response.sendRedirect("/homePage");
     }
 
     @Override
@@ -75,15 +73,7 @@ public class TokenAuthenticationFilter extends AbstractAuthenticationProcessingF
     @Override
     public void doFilter(ServletRequest req, ServletResponse res,
                          FilterChain chain) throws IOException, ServletException {
-        HttpServletRequest request = (HttpServletRequest) req;
-        String requestURI = request.getRequestURI();
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (requestURI.startsWith("/home") && authentication != null) {
-            res.reset();
-            req.getRequestDispatcher("/homePage").forward(req, res);
-        } else {
             super.doFilter(req, res, chain);
-        }
     }
 
     private String getTokenFromRequest(HttpServletRequest request) {
