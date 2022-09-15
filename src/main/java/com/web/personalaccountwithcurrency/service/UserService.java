@@ -2,7 +2,9 @@ package com.web.personalaccountwithcurrency.service;
 
 
 import com.web.personalaccountwithcurrency.config.jwt.JwtProvider;
+import com.web.personalaccountwithcurrency.repository.RatesRepository;
 import com.web.personalaccountwithcurrency.repository.UserRepository;
+import com.web.personalaccountwithcurrency.repository.entity.Rates;
 import com.web.personalaccountwithcurrency.repository.entity.Role;
 import com.web.personalaccountwithcurrency.repository.entity.User;
 import lombok.extern.slf4j.Slf4j;
@@ -15,20 +17,26 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.Map;
 import java.util.Random;
+import java.util.stream.Collectors;
 
+/**
+ * main service for all user operations
+ */
 @Service
 @Slf4j
 public class UserService implements UserDetailsService {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
-
     private final JwtProvider jwtProvider;
+    private final RatesRepository ratesRepository;
 
-    public UserService(UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder, JwtProvider jwtProvider) {
+    public UserService(UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder, JwtProvider jwtProvider, RatesRepository ratesRepository) {
         this.userRepository = userRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.jwtProvider = jwtProvider;
+        this.ratesRepository = ratesRepository;
     }
 
     @Override
@@ -106,5 +114,19 @@ public class UserService implements UserDetailsService {
     public User getCurrentUser(Authentication authentication) {
         String userName = String.valueOf(authentication.getPrincipal());
         return (User) loadUserByUsername(userName);
+    }
+
+    public Map<String, String> getRates() {
+        return ratesRepository.findAll().stream().collect(Collectors.toMap(
+                Rates::getCurrency,
+                item -> String.valueOf(item.getAmount())
+        ));
+    }
+
+    public void logout() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null) {
+            SecurityContextHolder.getContext().setAuthentication(null);
+        }
     }
 }

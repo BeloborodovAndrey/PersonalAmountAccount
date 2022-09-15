@@ -6,6 +6,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @Controller
 @RequestMapping("/")
 public class UsersController {
@@ -38,7 +40,7 @@ public class UsersController {
     }
 
     @ResponseBody
-    @GetMapping("/currentUser")
+    @PostMapping("/currentUser")
     public User getCurrentUser(Authentication authentication) {
         return userService.getCurrentUser(authentication);
     }
@@ -47,5 +49,11 @@ public class UsersController {
     @PostMapping("/signIn")
     public User signUser(@RequestParam("login") String login, @RequestParam("password") String password) {
         return userService.loadUserByUsernameAndPassword(login, password);
+    }
+
+    @GetMapping("/testRates")
+    @ResponseBody
+    public Map<String, String> getTestRates() {
+        return userService.getRates();
     }
 }

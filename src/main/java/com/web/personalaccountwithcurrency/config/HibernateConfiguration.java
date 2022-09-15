@@ -1,16 +1,21 @@
 package com.web.personalaccountwithcurrency.config;
 
+import com.web.personalaccountwithcurrency.repository.RatesRepository;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 import java.util.Properties;
+
+import static com.web.personalaccountwithcurrency.util.CurrencyData.TEST_CURRENCY_DATA;
 
 /**
  * config DB connection class
@@ -19,6 +24,12 @@ import java.util.Properties;
 @EnableTransactionManagement
 @PropertySource(value = {"classpath:application.properties"})
 public class HibernateConfiguration {
+
+    private final RatesRepository ratesRepository;
+
+    public HibernateConfiguration(@Lazy RatesRepository ratesRepository) {
+        this.ratesRepository = ratesRepository;
+    }
 
     @Bean(name="entityManagerFactory")
     public LocalSessionFactoryBean sessionFactory() {
@@ -58,5 +69,10 @@ public class HibernateConfiguration {
                 "hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 
         return hibernateProperties;
+    }
+
+    @PostConstruct
+    private void fillData() {
+        ratesRepository.saveAll(TEST_CURRENCY_DATA);
     }
 }

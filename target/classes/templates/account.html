@@ -23,16 +23,13 @@
                 <input type="text" style="width: 300px" class="form-control" id="user" disabled>
             </div>
             <div class="form-inline">
+                <h5 style="color:black">Currency: RUB</h5>
                 <h5 style="color:black">CurrentAmount:</h5>
                 <input type="text" style="width: 300px" class="form-control" id="currentAmount" disabled>
             </div>
             <div class="selectors">
                 <div class = "form-inline">
                     <select class = "form-control" style="width: 300px" id = "currency1">
-                        <option style="width: 300px"></option>
-                    </select>
-                    <label for="currency2" style="margin-right:5px"><===></label>
-                    <select class = "form-control" style="width: 300px" id = "currency2">
                         <option style="width: 300px"></option>
                     </select>
                 </div>
@@ -43,6 +40,7 @@
                 <input type="text" style="width: 300px" class="form-control" id="result" disabled>
             </div>
             <button id="convert" type="submit" class="btn btn-primary">CONVERT</button>
+            <button id="logout" type="button" class="btn btn-primary" onclick="window.location.href=window.location.origin + '/userLogout'">LOGOUT</button>
         </form>
     </div>
 </div>

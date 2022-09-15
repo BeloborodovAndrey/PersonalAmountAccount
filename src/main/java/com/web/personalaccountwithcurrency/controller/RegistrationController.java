@@ -31,4 +31,9 @@ public class RegistrationController {
         return userService.saveUser(login, password);
     }
 
+    @GetMapping("/userLogout")
+    public String logout() {
+        userService.logout();
+        return "index";
+    }
 }
