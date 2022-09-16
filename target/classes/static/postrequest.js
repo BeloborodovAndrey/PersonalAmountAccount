@@ -17,11 +17,8 @@ $(document).ready(function() {
 		const min = 0;
 		if (parseFloat($("#amount").val()) > max)
 		{
+			alert('Input amount more than account amount');
 			$("#amount").val(max);
-		}
-		else if (parseFloat($("#amount").val()) < min)
-		{
-			$("#amount").val(min);
 		}
 	});
 
@@ -72,6 +69,7 @@ $(document).ready(function() {
 				var select1 = document.getElementById("currency1");
 				select1.options.length = 0;
 				fillDefaultCurrency(select1, result);
+				alert('currency rates have been updated')
 			},
 			error: function (e) {
 				alert("Error!")
@@ -83,7 +81,7 @@ $(document).ready(function() {
 
 	function fillCurrentUserData(){
 		$.ajax({
-				type : "POST",
+				type : "GET",
 				contentType : "application/json",
 				url: window.location.origin + '/currentUser',
 				dataType: 'json',

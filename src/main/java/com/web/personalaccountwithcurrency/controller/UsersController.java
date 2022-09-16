@@ -19,11 +19,6 @@ public class UsersController {
         this.userService = userService;
     }
 
-    @GetMapping({"/", "/login", "/index"})
-    public String getLoginPage() {
-        return "index";
-    }
-
 
     @GetMapping("/home")
     @ResponseBody
@@ -34,13 +29,8 @@ public class UsersController {
         return "false";
     }
 
-    @GetMapping("/homePage")
-    public String getHomePage() {
-        return "account";
-    }
-
     @ResponseBody
-    @PostMapping("/currentUser")
+    @GetMapping("/currentUser")
     public User getCurrentUser(Authentication authentication) {
         return userService.getCurrentUser(authentication);
     }
@@ -49,6 +39,11 @@ public class UsersController {
     @PostMapping("/signIn")
     public User signUser(@RequestParam("login") String login, @RequestParam("password") String password) {
         return userService.loadUserByUsernameAndPassword(login, password);
+    }
+
+    @GetMapping("/homePage")
+    public String getHomePage() {
+        return "account";
     }
 
     @GetMapping("/testRates")

@@ -4,10 +4,7 @@ import com.web.personalaccountwithcurrency.repository.entity.User;
 import com.web.personalaccountwithcurrency.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Андрей
@@ -35,7 +32,7 @@ public class RegistrationController {
         return userService.saveUser(login, password);
     }
 
-    @GetMapping("/userLogout")
+    @PostMapping("/userLogout")
     public String userLogout() {
         userService.logout();
         return "index";

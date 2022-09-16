@@ -1,5 +1,6 @@
 package com.web.personalaccountwithcurrency.config;
 
+import com.web.personalaccountwithcurrency.config.handler.SecurityContextLogoutHandler;
 import com.web.personalaccountwithcurrency.config.jwt.JwtProvider;
 import com.web.personalaccountwithcurrency.config.jwt.TokenAuthenticationFilter;
 import com.web.personalaccountwithcurrency.service.UserService;
@@ -15,6 +16,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -27,11 +29,14 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final CustomAuthenticationManager authenticationManager;
 
+    private final SecurityContextLogoutHandler securityContextLogoutHandler;
 
-    public SpringSecurityConfig(@Lazy UserService userService, JwtProvider jwtProvider, CustomAuthenticationManager authenticationManager) {
+
+    public SpringSecurityConfig(@Lazy UserService userService, JwtProvider jwtProvider, CustomAuthenticationManager authenticationManager, SecurityContextLogoutHandler securityContextLogoutHandler) {
         this.userService = userService;
         this.jwtProvider = jwtProvider;
         this.authenticationManager = authenticationManager;
+        this.securityContextLogoutHandler = securityContextLogoutHandler;
     }
 
     @Bean
@@ -52,10 +57,15 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/", "/home", "/account*").access("hasRole('USER')")
-                .antMatchers("/resources/**", "/homePage").permitAll()
+                .antMatchers("/homePage").hasRole("USER")
+                .antMatchers("/resources/**").permitAll()
                 .and().csrf().disable().formLogin().loginPage("/index").permitAll()
                 .usernameParameter("username").passwordParameter("password")
                 .defaultSuccessUrl("/homePage")
+                .and()
+                .logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/userLogout"))
+                .logoutSuccessHandler(securityContextLogoutHandler)
                 .and()
                 .addFilterAfter(new TokenAuthenticationFilter("/home", jwtProvider, userService, authenticationManager), UsernamePasswordAuthenticationFilter.class);
     }
